@@ -9,7 +9,7 @@ describe('Accounts API', () => {
         .post("/api/account")
         .send({
             accountname: "my name",
-            accountnumber: "0000000000"
+            accountnumber: "1111111111"
         })
         .expect("Content-Type", /json/)
         .expect(201)
@@ -24,7 +24,7 @@ describe('Accounts API', () => {
 
     it("GET /api/account/id --> specific account by id", () => {
         return request(app)
-        .get("/api/account/1")
+        .get("/api/account/4")
         .expect('Content-Type', /json/)
         .expect(200)
         .then((response) => {
@@ -45,7 +45,7 @@ describe('Accounts API', () => {
 
     it("POST /api/account/id/fund --> funded success message", () => {
         return request(app)
-        .post("/api/account/1/fund")
+        .post("/api/account/4/fund")
         .send({
             amount: 100,
         })
@@ -63,10 +63,10 @@ describe('Accounts API', () => {
 
     it("POST /api/account/id/transfer --> transfer success message", () => {
         return request(app)
-        .post("/api/account/1/transfer")
+        .post("/api/account/4/transfer")
         .send({
             amount: 50,
-            receiver_account: 2
+            receiver_account: 14
         })
         .expect('Content-Type', /json/)
         .expect(200)
@@ -82,7 +82,7 @@ describe('Accounts API', () => {
 
     it("POST /api/account/id/withdraw --> withdraw success message", () => {
         return request(app)
-        .post("/api/account/1/withdraw")
+        .post("/api/account/4/withdraw")
         .send({
             amount: 50,
         })

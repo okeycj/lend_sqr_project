@@ -22,5 +22,5 @@ exports.up = async function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = async function(knex) {
-  return knex.schema.dropTable('wallets').dropTable('accounts').dropTable('users');
+  return knex.schema.dropTable('wallets').dropTable('accounts');
 };
