@@ -33,7 +33,7 @@ function server() {
     app.use("/api/account", AccountRoutes);
     app.use(express.static(__dirname + "/public"));
     app.get("*", function (req, res) {
-        res.send("Welcome to VPay API Service (v1).");
+        res.send("Welcome to Account API Service (v1).");
     });
 
     return app;
